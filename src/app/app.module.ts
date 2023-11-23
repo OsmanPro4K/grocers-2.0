@@ -10,6 +10,8 @@ import { NavigationBarComponent } from './headers/navigation-bar/navigation-bar.
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrdersComponent } from './orders/orders.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminNavigationBarComponent } from './admin/admin-navigation-bar/admin-navigation-bar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { OrdersComponent } from './orders/orders.component';
     NavigationBarComponent,
     CartComponent,
     CheckoutComponent,
-    OrdersComponent
+    OrdersComponent,
+    AdminComponent,
+    AdminNavigationBarComponent
   ],
   imports: [
     BrowserModule,

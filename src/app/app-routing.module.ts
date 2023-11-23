@@ -5,13 +5,15 @@ import { ProductsComponent } from './products/products.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrdersComponent } from './orders/orders.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: 'product-manager', component: ProductManagerComponent },
   {path: '', component: ProductsComponent},
   {path: 'cart', component: CartComponent},
   {path: 'checkout', component: CheckoutComponent},
-  {path: 'orders', component: OrdersComponent}
+  {path: 'orders', component: OrdersComponent},
+  {path: 'admin', component: AdminComponent}
 ];
 
 @NgModule({
