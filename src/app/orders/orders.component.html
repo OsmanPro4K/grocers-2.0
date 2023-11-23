@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <h2>Delivery Order Details</h2>
+
+  <div class="card mb-3" *ngFor="let order of orders">
+    <div class="card-body">
+      <h5 class="card-title">Full Name: {{ order.fullName }}</h5>
+      <p class="card-text">Email: {{ order.email }}</p>
+      <p class="card-text">Address: {{ order.address }}</p>
+      <p class="card-text">Credit Card Number: {{ order.creditCardNumber }}</p>
+      <p class="card-text">Expiry {{ order.expiryDate }}</p>
+      <p class="card-text">CVV: {{ order.cvv }}</p>
+      <div class="list-group">
+        <div class="list-group-item products-list d-flex align-items-center" *ngFor="let product of order.products">
+          <img
+            [src]="product.imageSrc"
+            [alt]="product.name"
+            style="width: 50px; margin-right: 10px"
+            class="rounded-2"
+          />
+          <div class="flex-grow-1">
+            <p>
+              <span style="color: gray">{{ product.name }}</span> <br />
+              <span class="fw-bold"> {{ product.price }}KD/kg </span>
+            </p>
+          </div>
+          x{{ product.amount }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <p *ngIf="orders.length === 0">No orders, please wait!</p>
+</div>

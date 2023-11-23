@@ -1,0 +1,112 @@
+<app-navigation-bar></app-navigation-bar>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Checkout</h4>
+          <form
+            (submit)="
+              onPlaceOrderClicked(
+                fullNameInput.value,
+                emailInput.value,
+                addressInput.value,
+                creditCardInput.value,
+                expiryDateInput.value,
+                cvvInput.value
+              )
+            "
+          >
+            <div class="form-group mb-3">
+              <label for="fullName">Full Name</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter your full name"
+                required
+                #fullNameInput
+              />
+            </div>
+            <div class="form-group mb-3">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Enter your email"
+                required
+                #emailInput
+              />
+            </div>
+            <div class="form-group mb-3">
+              <label for="address">Address</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter your address"
+                required
+                #addressInput
+              />
+            </div>
+            <div class="form-group mb-3">
+              <label for="cardNumber">Credit Card Number</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter your card number"
+                required
+                #creditCardInput
+              />
+            </div>
+            <div class="form-row">
+              <div class="form-group mb-3 col-md-6">
+                <label for="expiryDate">Expiry Date</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="MM/YY"
+                  required
+                  #expiryDateInput
+                />
+              </div>
+              <div class="form-group mb-3 col-md-6">
+                <label for="cvv">CVV</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter CVV"
+                  required
+                  #cvvInput
+                />
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">
+              Place Order <i class="fa-solid fa-truck"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="list-group">
+        <div
+          class="list-group-item products-list d-flex align-items-center"
+          *ngFor="let product of productsInCheckout; let i = index"
+        >
+          <img
+            [src]="product.imageSrc"
+            [alt]="product.name"
+            style="width: 50px; margin-right: 10px"
+            class="rounded-2"
+          />
+          <div class="flex-grow-1">
+            <p>
+              <span style="color: gray">{{ product.name }}</span> <br />
+              <span class="fw-bold"> {{ product.price }}KD/kg </span>
+            </p>
+          </div>
+          x{{ product.amount }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
